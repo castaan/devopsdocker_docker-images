@@ -5,7 +5,7 @@ This repository contains the Docker image's code developed by DevOps.
 # How do I add a new image's code
 
 -	create a folder for my image: `mkdir myimage`
--	create a `README.md` file (required, 100 char max)
+-	create a `README.md` file (required)
 -	create a `Dockerfile` file (required)
 -	create an `assets` folder (not required)
 
@@ -23,5 +23,9 @@ This file contains a brief explanation of the image purpose and the following in
 ## `<image name>/Dockerfile`
 
 This file should add labels following the [Label Schema Convention][label-schema].
+
+## `<image name>/assets`
+
+This folder contains all the files needed to build the image, related with `COPY` and `ADD` docker. 
 
 [label-schema]: http://label-schema.org/rc1/

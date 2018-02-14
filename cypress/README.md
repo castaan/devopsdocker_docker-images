@@ -1,6 +1,6 @@
 # docker-cypress
 
-A Docker image based on [Cypress.io][cypress]. This image has installed cypress framework on one side and chrome and firefox web browsers on the other.
+A Docker image based on [Cypress.io][cypress]. This image has installed [Cypress Framework][cypress] on one side and [Google Chrome Web Browser][chrome] and [Firefox Web Browser][firefox] on the other.
 
 ## Why?
 
@@ -21,6 +21,13 @@ ARG BUILD_DATE -- DATE WHEN THE IMAGES IS BUILT
 
 ```console
 $ docker build -t euipo/devops/cypress/browsers:[IMAGE_TAG] --build-arg VERSION=[IMAGE_TAG] --build-arg VCS_URL=http://[GIT_REPOSITORY_URL] --build-arg VCS_REF=0000000000000000 --build-arg BUILD_DATE=[date] --build-arg HTTP_PROXY=[HTTP_PROXY] --build-arg HTTPS_PROXY=[HTTPS_PROXY] .
+```
+
+There are a couple of extra vars that can be used to set proxy configuration.
+
+```
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
 ```
 
 ### Run Container
@@ -64,4 +71,6 @@ docker inspect [CYPRESS_CONTAINER_NAME]
 We should search the commit defined in: **org.label-schema.vcs-ref** in VCS REPO **org.label-schema.vcs-url** 
 
 [cypress]: https://www.cypress.io/
+[chrome]: https://www.google.es/chrome/
+[firefox]: https://www.mozilla.org/
 [vcs_url]: https://git.euipo.europa.eu/projects/DEVOPSDOCKER/repos/docker-images/browse
