@@ -1,4 +1,5 @@
 {
+  "baseUrl" : "http://ci-test-bamboo-master:8085",
   "ignoreTestFiles": "disabled_*",
   "chromeWebSecurity": false,
   "pageLoadTimeout": 120000,
