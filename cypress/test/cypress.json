@@ -1,5 +1,5 @@
 {
-  "baseUrl" : "http://ci-test-bamboo-master:8085",
+  "baseUrl" : "https://euipo.europa.eu",
   "ignoreTestFiles": "disabled_*",
   "chromeWebSecurity": false,
   "pageLoadTimeout": 120000,
