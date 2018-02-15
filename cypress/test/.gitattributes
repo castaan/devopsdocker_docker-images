@@ -1,0 +1,3 @@
+cypress.json merge=ours
+build.properties merge=ours
+cypress/fixtures/env.json merge=ours

@@ -1,0 +1,13 @@
+{
+  "ignoreTestFiles": "disabled_*",
+  "chromeWebSecurity": false,
+  "pageLoadTimeout": 120000,
+  "watchForFileChanges": false,
+  "blacklistHosts": "www.google-analytics.com",
+  "userAgent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36",
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "results/cypress-test-output.xml",
+    "toConsole": false
+  }
+}
