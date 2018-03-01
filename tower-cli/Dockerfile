@@ -2,6 +2,10 @@ FROM python:3.6.4-alpine3.7
 
 ARG HTTP_PROXY
 ARG HTTPS_PROXY
+ARG VERSION
+ARG VCS_URL
+ARG VCS_REF
+ARG BUILD_DATE
 
 RUN export https_proxy=$HTTPS_PROXY
 RUN export http_proxy=$HTTP_PROXY
