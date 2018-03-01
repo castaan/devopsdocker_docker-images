@@ -1,30 +1,31 @@
 FROM cypress/browsers:chrome63-ff57
 
+# Input arguments (some with default values)
 ARG HTTP_PROXY
 ARG HTTPS_PROXY
-
-RUN export https_proxy=$HTTPS_PROXY
-RUN export http_proxy=$HTTP_PROXY
-
-ENV http_proxy $HTTP_PROXY
-ENV https_proxy $HTTPS_PROXY
-
-RUN npm config set proxy $HTTP_PROXY
-RUN npm config set https-proxy $HTTPS_PROXY
-RUN npm install cypress
-
-ENV http_proxy ''
-ENV https_proxy ''
-
-RUN firefox --version
-
-# Metadata params
 ARG VERSION=latest
 ARG VCS_URL=Unknown
 ARG VCS_REF=Unknown
 ARG BUILD_DATE=Unknown
 
-# Metadata
+# Environment set to allow external applications installation
+RUN export https_proxy=$HTTPS_PROXY
+RUN export http_proxy=$HTTP_PROXY
+ENV http_proxy $HTTP_PROXY
+ENV https_proxy $HTTPS_PROXY
+
+# Installation
+RUN npm config set proxy $HTTP_PROXY
+RUN npm config set https-proxy $HTTPS_PROXY
+RUN npm install cypress
+
+# Cleaning environment
+ENV http_proxy ''
+ENV https_proxy ''
+
+RUN firefox --version
+
+# Apply metadata
 LABEL org.label-schema.vendor="EUIPO" \
       org.label-schema.url="https://euipo.europa.eu/" \
       org.label-schema.name="Cypress.io with Browsers" \
