@@ -1,22 +1,29 @@
 FROM python:3.6.4-alpine3.7
 
+# Input arguments (some with default values)
 ARG HTTP_PROXY
 ARG HTTPS_PROXY
+ARG VERSION=latest
+ARG VCS_URL=Unknown
+ARG VCS_REF=Unknown
+ARG BUILD_DATE=Unknown
 
+# Environment set to allow external applications installation
 RUN export https_proxy=$HTTPS_PROXY
 RUN export http_proxy=$HTTP_PROXY
-
 ENV http_proxy $HTTP_PROXY
 ENV https_proxy $HTTPS_PROXY
 
+# Installation
 RUN pip install ansible-tower-cli
 
+# Cleaning environment
 ENV http_proxy ''
 ENV https_proxy ''
 
 COPY assets/tower_cli.cfg /root/.tower_cli.cfg
 
-# Metadata
+# Apply metadata
 LABEL org.label-schema.vendor="EUIPO" \
       org.label-schema.url="https://euipo.europa.eu/" \
       org.label-schema.name="Tower CLI" \
