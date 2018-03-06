@@ -15,7 +15,7 @@ ENV http_proxy $HTTP_PROXY
 ENV https_proxy $HTTPS_PROXY
 
 # Installation
-#RUN pip install ansible-tower-cli
+RUN pip install ansible-tower-cli
 
 # Cleaning environment
 ENV http_proxy ''
