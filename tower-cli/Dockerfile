@@ -21,7 +21,7 @@ RUN pip install ansible-tower-cli
 ENV http_proxy ''
 ENV https_proxy ''
 
-#COPY assets/tower_cli.cfg /root/.tower_cli.cfg
+COPY assets/tower_cli.cfg /root/.tower_cli.cfg
 
 # Apply metadata
 LABEL org.label-schema.vendor="EUIPO" \
